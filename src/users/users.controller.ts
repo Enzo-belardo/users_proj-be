@@ -81,7 +81,7 @@ export class UsersController {
 			return response.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
 
 				statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
-				message: 'Errore durante il recupero degli utenti.',
+				message: 'Errore durante l\'aggiornamento dell\'utente',
 				error: 'Internal Server Error',
 			});
 		}
@@ -104,7 +104,7 @@ export class UsersController {
 
 			return response.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
 				statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
-				message: 'Errore durante il recupero degli utenti.',
+				message: 'Errore durante la cancellazione dell\'utente',
 				error: 'Internal Server Error',
 			});        
 		}
