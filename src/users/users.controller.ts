@@ -34,10 +34,10 @@ export class UsersController {
 		try { 
 			if (user) {
 				const createdUser = await this.usersService.createUser(user);
-				if(createdUser){
-					response.status(HttpStatus.CREATED).json(user)
-					return createdUser;  
-				} 
+
+				response.status(HttpStatus.CREATED).json(user)
+
+				return createdUser;  
 			} else {
 
 				response.status(HttpStatus.BAD_REQUEST).json({
@@ -52,7 +52,7 @@ export class UsersController {
 			return response.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
 
 				statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
-				message: 'Errore durante il recupero degli utenti.',
+				message: 'Errore durante la creazione di un nuovo utente',
 				error: 'Internal Server Error',
 			});
 		}  
@@ -90,7 +90,7 @@ export class UsersController {
 
 
   	@Delete('delete/:id')
-  	async deleteUser(@Param('id') id: number, @Res() response: Response): Promise<any> {
+  	async deleteUser(@Param('id') id: number, @Res() response: Response): Promise<UserDto | any> {
 		try {
 			if(id){
 				response.status(HttpStatus.CREATED).json()
