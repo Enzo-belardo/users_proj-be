@@ -10,14 +10,14 @@ import { User } from './users/entities/user.entity';
 		UsersModule,
 		TypeOrmModule.forRoot({
 			type: 'sqlite',         
-			database: 'C:\\Users\\v.belardo\\Desktop\\users.db',      
+			database: 'C:\\Users\\vince\\OneDrive\\Desktop\\users.db',      
 			entities: [User],          
 			synchronize: true, 		   
 			logging: true, 		          
 		}),
 	],
 	controllers: [AppController], 
-	providers: [AppService],
+	providers: [AppService], 
 })
 export class AppModule {} 
   
